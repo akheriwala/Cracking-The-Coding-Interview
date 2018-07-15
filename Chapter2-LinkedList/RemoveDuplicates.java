@@ -1,18 +1,19 @@
+/**
+ * Write code to remove duplicates from an unsorted linked list.
+ *
+ * FOLLOW UP
+ * How would you solve this problem if a temporary buffer is not allowed?
+ *
+ * Below solution is implemented using a tmp buffer.
+ */
+
 package com.chapter2;
 
 import java.util.*;
+import helper.node;
 
 public class RemoveDups {
 
-    //Define the node class
-    static class node {
-        int data;
-        node next; //recursion
-
-        public node(int data) {
-            this.data = data;
-        }
-    }
 
     //Method to remove duplicates from LinkedList
     public static void deleteDups(node n) {
@@ -29,31 +30,19 @@ public class RemoveDups {
         }
     }
 
-    //Method to Print LinkedList
-    private static void printList(node n) {
-        while (n != null) {
-            System.out.print(n.data + " ");
-            n = n.next;
-        }
-        System.out.println(" ");
-    }
-
+    // TEST---------------------------------
     public static void main(String[] args) {
-        node start = new node(10);
-        start.next = new node(12);
-        start.next.next = new node(13);
-        start.next.next.next = new node(12);
-        start.next.next.next.next = new node(15);
-        start.next.next.next.next.next = new node(16);
-        start.next.next.next.next.next.next = new node(10);
+
+        int[] list = {10, 12, 13, 12, 15, 16, 10, 20, 13, 15};
+        node start = node.buildList(list);
 
         System.out.println("LinkedList before removing duplicates: ");
-        printList(start);
+        node.printList(start);
 
         deleteDups(start);
 
         System.out.println("LinkedList after removing duplicates: ");
-        printList(start);
+        node.printList(start);
 
 
     }
