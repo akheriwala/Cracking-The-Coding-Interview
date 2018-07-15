@@ -22,7 +22,7 @@ public class node {
     }
 
     //Method to Print LinkedList
-    private static void printList(node n) {
+    public static void printList(node n) {
         while (n != null) {
             System.out.print(n.data + "-->");
             n = n.next;
